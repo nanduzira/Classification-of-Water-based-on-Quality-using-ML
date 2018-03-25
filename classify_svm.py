@@ -1,17 +1,17 @@
-# # Gaussian Naive Bayes
+# # Support Vector Machine
 from sklearn import datasets
 from sklearn import metrics
-from sklearn.naive_bayes import GaussianNB
+from sklearn.svm import SVC
 
 from csv_handler import load_csv
 
-# # Naive Bayes Module
-def nb(filename):
+# # SVC Module
+def svc(filename):
     # # load the datasets
     trainer, target = load_csv(filename)
 
-    # # fit a Naive Bayes model to the data
-    model = GaussianNB()
+    # # fit a SVM model to the data
+    model = SVC()
     model.fit(trainer, target)
     print(model)
 
@@ -25,4 +25,4 @@ def nb(filename):
     print(metrics.confusion_matrix(expected, predicted))
 
 filename = "temp.csv"
-nb(filename)
+svc(filename)

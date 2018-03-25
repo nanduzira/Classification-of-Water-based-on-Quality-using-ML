@@ -1,17 +1,17 @@
-# # Gaussian Naive Bayes
+# # k-Nearest Neighbor
 from sklearn import datasets
 from sklearn import metrics
-from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
 
 from csv_handler import load_csv
 
-# # Naive Bayes Module
-def nb(filename):
+# # K Neighbors Classifier Module
+def knn(filename):
     # # load the datasets
     trainer, target = load_csv(filename)
 
-    # # fit a Naive Bayes model to the data
-    model = GaussianNB()
+    # # fit a k-nearest neighbor model to the data
+    model = KNeighborsClassifier()
     model.fit(trainer, target)
     print(model)
 
@@ -25,4 +25,4 @@ def nb(filename):
     print(metrics.confusion_matrix(expected, predicted))
 
 filename = "temp.csv"
-nb(filename)
+knn(filename)
