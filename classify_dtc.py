@@ -12,16 +12,18 @@ def dtc(file_name, predict_me):
     # # fit a CART model to the data
     model = DecisionTreeClassifier()
     model.fit(trainer, target)
-    print(model)
+    # print(model)
 
     # # make predictions
     expected = target
     predicted = model.predict(predict_me)
-    print(predicted)
+    # print(predicted)
 
     # # summarize the fit of the model
     # print(metrics.classification_report(expected, predicted))
     # print(metrics.confusion_matrix(expected, predicted))
+
+    return predicted
 
 # # Unit Test Part
 # FILE_NAME = "temp.csv"
