@@ -3,9 +3,12 @@ from sklearn import datasets
 from sklearn import metrics
 from sklearn.naive_bayes import GaussianNB
 
+from csv_handler import load_csv
+
+
 # load the datasets
-dataset = datasets.load_iris()
-print (dataset.target)
+# dataset = datasets.load_iris()
+# print (dataset.target)
 # print (type(dataset.data[]))
 
 # # fit a Naive Bayes model to the data
